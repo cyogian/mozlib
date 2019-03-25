@@ -1,2 +1,3 @@
 .vscode/settings.json
-static/
+static
+db.sqlite3
