@@ -3,6 +3,7 @@ A simple local library website using Django Framework.
 This project follows the [Django Framework(Python)](https://developer.mozilla.org/en-US/docs/Learn/Server-side/Django) tutorial. 
 
 [The LocalLibrary Website](https://developer.mozilla.org/en-US/docs/Learn/Server-side/Django/Tutorial_local_library_website)
+
 LocalLibrary is the name of the website that we'll create and evolve over the course of this series of tutorials. As you'd expect, the purpose of the website is to provide an online catalog for a small local library, where users can browse available books and manage their accounts.
 
 This example has been carefully chosen because it can scale to show as much or as little detail as we need, and can be used to show off almost any Django feature. More importantly, it allows us to provide a guided path through the most important functionality in the Django web framework:
