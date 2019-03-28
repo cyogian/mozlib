@@ -1,5 +1,6 @@
 from django.shortcuts import render
 from django.views import generic
+import pdb
 # Create your views here.
 from catalog.models import Book, Author, BookInstance, Genre
 
@@ -19,7 +20,10 @@ def index(request):
     num_genres = Genre.objects.count()
     num_books_containing_python  = Book.objects.filter(title__icontains = 'python').count()
 
-    
+     # Number of visits to this view, as counted in the session variable.
+    num_visits = request.session.get('num_visits', 0)
+    request.session['num_visits'] = num_visits + 1
+     
     context = {
         'num_books': num_books,
         'num_instances': num_instances,
@@ -27,6 +31,7 @@ def index(request):
         'num_authors': num_authors,
         'num_books_containing_python': num_books_containing_python,
         'num_genres': num_genres,
+        'num_visits': num_visits,
     }
 
     # Render the HTML template index.html with the data in the context variable
@@ -34,7 +39,14 @@ def index(request):
 
 class BookListView(generic.ListView):
     model = Book
-    paginate_by = 5
+    paginate_by = 10
 
 class BookDetailView(generic.DetailView):
     model = Book
+
+class AuthorListView(generic.ListView):
+    model = Author
+    paginate_by = 10
+
+class AuthorDetailView(generic.DetailView):
+    model = Author

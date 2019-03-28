@@ -13,4 +13,6 @@
     <li><strong>Genres:</strong> {{ num_genres }}</li>
     <li><strong>Books Containing Python in Title: </strong> {{ num_books_containing_python }}</li>
   </ul>
+  <p>You have visited this page {{ num_visits }}{% if num_visits == 1 %} time{% else %} times{% endif %}.</p>
+  <p>{{ num_tum.saved }}</p>
 {% endblock %}
