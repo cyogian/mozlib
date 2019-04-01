@@ -1,2 +1,5 @@
 /.vscode/settings.json
 /static
+*.bak
+
+*.sqlite3
